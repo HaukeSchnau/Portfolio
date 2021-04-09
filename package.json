@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "node-sass scss/main.scss dist/css/main.css --output-style compressed",
+    "watch-sass": "node-sass -w scss/main.scss dist/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

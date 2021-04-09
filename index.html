@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 user-scalable=no"
+    />
+    <meta name="description" content="Hauke Schnaus persönliche Website" />
+    <title>Hauke Schnau</title>
+    <link rel="stylesheet" href="dist/css/main.css" />
+    <link rel="icon" type="image/svg" href="/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="bg">
+        <img src="img/bg.jpg" alt="" />
+      </div>
+      <img class="hauke" src="/img/hauke.png" alt="" />
+      <header>
+        <div class="social-media">
+          <a href="https://instagram.com/haukeschnau"
+            ><img src="/img/instagram.svg" alt="Instagram"
+          /></a>
+          <a href="https://xing.com/profile/Hauke_Schnau"
+            ><img src="/img/xing.svg" alt="Xing"
+          /></a>
+          <a href="https://linkedin.com/in/haukeschnau"
+            ><img src="/img/linkedin.svg" alt="LinkedIn"
+          /></a>
+          <a href="https://github.com/HaukeSchnau"
+            ><img src="/img/github.svg" alt="GitHub"
+          /></a>
+        </div>
+        <div class="darken-bg" id="darken-bg" onclick="toggleNav()"></div>
+        <nav id="nav">
+          <a href="#about" onclick="toggleNav()">Über mich</a
+          ><a href="#portfolio" onclick="toggleNav()">Portfolio</a
+          ><a href="#services" onclick="toggleNav()">Dienstleistungen</a
+          ><a href="#contact" onclick="toggleNav()">Kontakt</a>
+        </nav>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Navigation öffnen"
+          onclick="toggleNav()"
+        >
+          <img src="/img/hamburger.svg" alt="Menü" />
+        </button>
+      </header>
+      <div class="content">
+        <div class="subtitle">Hi, ich bin</div>
+        <h1>Hauke<br />Schnau.</h1>
+        <ul class="features">
+          <li>Full-Stack-Entwickler.</li>
+          <li>Web Designer.</li>
+          <li>Nerd.</li>
+        </ul>
+        <a class="cta" href="#about"
+          ><div class="arrow">👇</div>
+          mehr über mich & meine Arbeit</a
+        >
+      </div>
+    </div>
+    <section class="about" id="about">
+      <div class="heading">
+        <h4>Über mich</h4>
+        <h3>Wer ich bin</h3>
+      </div>
+      <div class="container">
+        <div class="content">
+          <h2>Moin!</h2>
+          <p>
+            Ich bin Hauke, 18 Jahre alt und mache zurzeit mein Abitur an der IGS
+            Lilienthal.
+          </p>
+          <p>
+            Schon immer war ich begeistert von Computern. Seit meinem 12.
+            Lebensjahr bin ich leidenschaftlicher Coder und habe mich in diesen
+            sechs Jahren mit einer Vielzahl von Technologien befasst. Ich bin
+            davon überzeugt, dass Lernen ein lebenslanger Prozess ist und bin
+            fähig, mich in dieser sehr schnelllebigen Branche gut anzupassen.
+          </p>
+          <p>
+            In drei Betriebspraktika habe ich die Arbeit im Team kennengelernt
+            und mich neuen Herausforderungen gestellt.
+          </p>
+          <p>
+            Heute habe ich mich auf die Web- und Appentwicklung sowohl im
+            Frontend als auch im Backend spezialisiert.
+          </p>
+        </div>
+        <div class="img-wrapper">
+          <img src="/img/hauke_at_work.png" alt="Ich bei der Arbeit" />
+        </div>
+      </div>
+    </section>
+    <section class="skills" id="skills">
+      <h3>Meine Skills</h3>
+      <div class="categories">
+        <div class="category">
+          <div class="heading">Sprachen</div>
+          <ul>
+            <li>JavaScript (ES6+)</li>
+            <li>TypeScript</li>
+            <li>HTML5</li>
+            <li>CSS3/Sass</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Dart</li>
+          </ul>
+        </div>
+        <div class="category">
+          <div class="heading">Frameworks</div>
+          <ul>
+            <li>React</li>
+            <li>Flutter</li>
+            <li>Vue</li>
+            <li>Express.js</li>
+            <li>Next.js</li>
+            <li>Node.js</li>
+          </ul>
+        </div>
+        <div class="category">
+          <div class="heading">Tools</div>
+          <ul>
+            <li>Linux Bash</li>
+            <li>Git & Github</li>
+            <li>Chrome DevTools</li>
+            <li>Postman</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+        <div class="category">
+          <div class="heading">Design</div>
+          <ul>
+            <li>Adobe XD</li>
+            <li>Figma</li>
+            <li>Prototyping</li>
+            <li>Wireframing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="portfolio">
+      <div class="heading">
+        <h4>Portfolio</h4>
+        <h3>Meine bisherigen Projekte</h3>
+      </div>
+      <ul>
+        <!-- <li style="--project-color: #ec1f25">
+          <div class="info">
+            <div class="title">Pizza Blitz Grasberg</div>
+            <div class="subtitle">reDesign, eCommerce</div>
+            <div class="text">
+              Was ursprünglich nur zur Verbesserung meiner Design-Skills dienen
+              sollte, wurde zu einem Online-Bestelldienst für den lokalen
+              Pizzalieferanten. Dieser bot bislang seine Speisekarte nur als
+              PDF-Dokument und Bestellungen nur telefonisch an. Mein reDesign
+              machte es den Kunden also deutlich leichter, dort einzukaufen.
+            </div>
+            <a href="https://pizzablitz.haukeschnau.de" class="cta"
+              >Website besuchen</a
+            >
+          </div>
+          <div class="img-wrapper">
+            <img src="/img/projects/pizzablitz.png" loading="lazy" />
+          </div>
+        </li> -->
+        <li style="--project-color: #3c81db">
+          <div class="info">
+            <div class="title">IGS Lilienthal Website</div>
+            <div class="subtitle">reDesign, custom CMS, Backend</div>
+            <div class="text">
+              Auf Anfrage einer meiner Lehrer habe ich die Website meiner Schule
+              modernisiert und neu strukturiert.
+            </div>
+            <a href="https://igs.haukeschnau.de" class="cta"
+              >Website besuchen</a
+            >
+          </div>
+          <div class="img-wrapper">
+            <img
+              src="/img/projects/igs.png"
+              loading="lazy"
+              alt="Screenshot der Website der IGS Lilienthal"
+            />
+          </div>
+        </li>
+        <li style="--project-color: #611c35">
+          <div class="info">
+            <div class="title">Kreisschülerrat OHZ</div>
+            <div class="subtitle">Built from Scratch</div>
+            <div class="text">
+              Im Zuge der Öffentlichkeitsarbeit hat sich der Kreisschülerrat des
+              Landkreises Osterholz, in dem ich Mitglied bin, für eine eigene
+              Website entschieden. Hier stellen wir uns vor und präsentieren
+              unsere Projekte für die Schüler in der Region.
+            </div>
+            <!-- <a href="https://ksr.haukeschnau.de" class="cta"
+              >Website besuchen</a
+            > -->
+          </div>
+          <div class="img-wrapper">
+            <img
+              src="/img/projects/ksr.png"
+              loading="lazy"
+              alt="Screenshot der Website des KSR OHZ"
+            />
+          </div>
+        </li>
+        <li style="--project-color: #33a42b">
+          <div class="info">
+            <div class="title">IGS Lilienthal App</div>
+            <div class="subtitle">
+              digitaler Begleiter für Schüler; unterstützt iOS & Android
+            </div>
+            <div class="text">
+              Diese App dient als mobiler Client für iServ mit einigen
+              zusätzlichen Funktionen. Beispielsweise erhält man eine
+              personalisierte Übersicht über Vertretungsplan, Klausuren und
+              Hausaufgaben.
+            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=de.haukeschnau.igs_lilienthal"
+              class="cta"
+              >App herunterladen</a
+            >
+          </div>
+          <div class="img-wrapper">
+            <img
+              src="/img/projects/igs-app.png"
+              loading="lazy"
+              alt="Screenshots der Android- und iOS-App der IGS-Lilienthal"
+            />
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="services" id="services">
+      <div class="heading">
+        <h4>Dienstleistungen</h4>
+        <h3>Alles aus einer Hand</h3>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <svg>
+            <defs>
+              <mask id="hole1">
+                <rect width="100%" height="99999999px" fill="white" />
+                <circle r="50px" cx="50%" cy="-10" fill="black" />
+              </mask>
+            </defs>
+            <rect
+              width="100%"
+              height="100%"
+              rx="30px"
+              fill="#fff"
+              mask="url(#hole1)"
+            />
+          </svg>
+
+          <div class="content">
+            <div class="title">Full-Stack Entwicklung</div>
+            <div class="text">
+              <p>
+                Ob responsive Website, Server-Backend, mobile App oder alles
+                zusammen: Ich erwecke Ihre Vision zum Leben!
+              </p>
+              <p>
+                Zu diesem Zweck beherrsche ich zahlreiche Programmiersprachen
+                und nutze ausschließlich modernste Technologien
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <svg>
+            <defs>
+              <mask id="hole1">
+                <rect width="100%" height="99999999px" fill="white" />
+                <circle r="50px" cx="50%" cy="-10" fill="black" />
+              </mask>
+            </defs>
+            <rect
+              width="100%"
+              height="100%"
+              rx="30px"
+              fill="#fff"
+              mask="url(#hole1)"
+            />
+          </svg>
+
+          <div class="content">
+            <div class="title">UI/UX Design</div>
+            <div class="text">
+              <p>
+                Vor der Entwicklung eines Frontends designe ich einige Entwürfe,
+                die ich mit Ihnen bespreche um das für Sie beste zu finden.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <svg>
+            <defs>
+              <mask id="hole1">
+                <rect width="100%" height="99999999px" fill="white" />
+                <circle r="50px" cx="50%" cy="-10" fill="black" />
+              </mask>
+            </defs>
+            <rect
+              width="100%"
+              height="100%"
+              rx="30px"
+              fill="#fff"
+              mask="url(#hole1)"
+            />
+          </svg>
+
+          <div class="content">
+            <div class="title">Wartung</div>
+            <div class="text"><p></p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h3>Neugierig geworden?</h3>
+      <div class="content">
+        <form>
+          <div class="sender-info">
+            <label>
+              <div class="container">Ihr Name</div>
+              <input placeholder="Max Mustermann" />
+            </label>
+            <label>
+              <div class="container">Ihre E-Mail-Adresse</div>
+              <input placeholder="max.mustermann@gmail.com" />
+            </label>
+          </div>
+          <label>
+            <div class="container">Betreff</div>
+            <input />
+          </label>
+          <label>
+            <div class="container">Nachricht</div>
+            <textarea rows="10"></textarea>
+          </label>
+          <button type="submit">Absenden</button>
+        </form>
+        <div class="more-contact">
+          <div class="heading">Weitere Kontaktmöglichkeiten:</div>
+          <ul>
+            <li>
+              <img src="/img/home.svg" alt="Adresse" />
+              <div>Worphauser Landstraße 3<br />28865 Lilienthal</div>
+            </li>
+            <li>
+              <img src="/img/email.svg" alt="E-Mail" />
+              <a href="mailto:hauke@schnau-lilienthal.de"
+                >hauke@schnau-lilienthal.de</a
+              >
+            </li>
+            <li>
+              <img src="/img/phone.svg" alt="Telefon" />
+              <a href="tel:0172 8284708">0172 8284708</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="social-media">
+        <a href="https://instagram.com/haukeschnau"
+          ><img src="/img/instagram.svg" alt="Instagram"
+        /></a>
+        <a href="https://xing.com/profile/Hauke_Schnau"
+          ><img src="/img/xing.svg" alt="Xing"
+        /></a>
+        <a href="https://linkedin.com/in/haukeschnau"
+          ><img src="/img/linkedin.svg" alt="LinkedIn"
+        /></a>
+        <a href="https://github.com/HaukeSchnau"
+          ><img src="/img/github.svg" alt="GitHub"
+        /></a>
+      </div>
+      <div class="legal-links">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+      <div class="copyright">&copy; 2021 Hauke Schnau</div>
+    </footer>
+  </body>
+
+  <script>
+    function toggleNav() {
+      const hamburger = document.getElementById("hamburger");
+      const bg = document.getElementById("darken-bg");
+      const nav = document.getElementById("nav");
+      hamburger.classList.toggle("active");
+      bg.classList.toggle("active");
+      nav.classList.toggle("active");
+    }
+  </script>
+</html>
