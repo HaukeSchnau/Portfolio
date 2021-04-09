@@ -625,7 +625,7 @@ footer {
       flex: 0 0 auto;
       display: inline-block;
       width: $hPadding;
-      width: 18rem;
+      width: #{"min(90%, 20rem)"};
       margin-right: 2em;
 
       .title {
