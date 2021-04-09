@@ -334,26 +334,26 @@
     <section class="contact" id="contact">
       <h3>Neugierig geworden?</h3>
       <div class="content">
-        <form>
+        <form id="contact-form" target="/">
           <div class="sender-info">
             <label>
               <div class="container">Ihr Name</div>
-              <input placeholder="Max Mustermann" />
+              <input name="name" placeholder="Max Mustermann" />
             </label>
             <label>
               <div class="container">Ihre E-Mail-Adresse</div>
-              <input placeholder="max.mustermann@gmail.com" />
+              <input name="email" placeholder="max.mustermann@gmail.com" />
             </label>
           </div>
           <label>
             <div class="container">Betreff</div>
-            <input />
+            <input name="subject" />
           </label>
           <label>
             <div class="container">Nachricht</div>
-            <textarea rows="10"></textarea>
+            <textarea name="message" rows="10"></textarea>
           </label>
-          <button type="submit">Absenden</button>
+          <button type="submit" class="btn">Absenden</button>
         </form>
         <div class="more-contact">
           <div class="heading">Weitere Kontaktmöglichkeiten:</div>
@@ -397,6 +397,13 @@
       </div>
       <div class="copyright">&copy; 2021 Hauke Schnau</div>
     </footer>
+
+    <div class="modal-background active" id="modal">
+      <div class="modal">
+        <div>Ihre Nachricht ist eingegangen, vielen Dank!</div>
+        <button onclick="closeModal()" class="btn">Schließen</button>
+      </div>
+    </div>
   </body>
 
   <script>
@@ -408,5 +415,30 @@
       bg.classList.toggle("active");
       nav.classList.toggle("active");
     }
+
+    function closeModal() {
+      const modal = document.getElementById("modal");
+      modal.classList.remove("active");
+    }
+
+    const form = document.getElementById("contact-form");
+    form.onsubmit = (e) => {
+      e.preventDefault();
+
+      const data = new FormData(e.target);
+
+      fetch("https://haukeschnau.de/send_message.php", {
+        method: "POST",
+        body: data,
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.success) {
+            const modal = document.getElementById("modal");
+            modal.classList.add("active");
+            form.reset();
+          }
+        });
+    };
   </script>
 </html>
