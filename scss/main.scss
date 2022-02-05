@@ -350,6 +350,20 @@ footer {
 
 // ABOUT //
 .about {
+  a {
+    color: $yellow;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  img.inline {
+    height: 1.5em;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+
   .container {
     background-color: $lightBlue;
     padding: 2rem;
