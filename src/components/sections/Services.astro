@@ -1,0 +1,142 @@
+<section class="services" id="services">
+    <div class="heading">
+        <h4>Dienstleistungen</h4>
+        <h3>Alles aus einer Hand</h3>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <svg>
+                <defs>
+                    <mask id="hole1">
+                        <rect width="100%" height="99999999px" fill="white" />
+                        <circle r="50px" cx="50%" cy="-10" fill="black" />
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" rx="30px" fill="#fff" mask="url(#hole1)" />
+            </svg>
+
+            <div class="content">
+                <div class="title">Full-Stack Entwicklung</div>
+                <div class="text">
+                    <p>
+                        Ob responsive Website, Server-Backend, mobile App oder alles
+                        zusammen: Ich erwecke Ihre Vision zum Leben!
+                    </p>
+                    <p>
+                        Zu diesem Zweck beherrsche ich zahlreiche Programmiersprachen
+                        und nutze ausschließlich modernste Technologien
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <svg>
+                <defs>
+                    <mask id="hole1">
+                        <rect width="100%" height="99999999px" fill="white" />
+                        <circle r="50px" cx="50%" cy="-10" fill="black" />
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" rx="30px" fill="#fff" mask="url(#hole1)" />
+            </svg>
+
+            <div class="content">
+                <div class="title">UI/UX Design</div>
+                <div class="text">
+                    <p>
+                        Vor der Entwicklung eines Frontends designe ich einige Entwürfe,
+                        die ich mit Ihnen bespreche um das für Sie beste Design zu
+                        finden.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <svg>
+                <defs>
+                    <mask id="hole1">
+                        <rect width="100%" height="99999999px" fill="white" />
+                        <circle r="50px" cx="50%" cy="-10" fill="black" />
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" rx="30px" fill="#fff" mask="url(#hole1)" />
+            </svg>
+
+            <div class="content">
+                <div class="title">Wartung</div>
+                <div class="text">
+                    <p>
+                        Auch nach der Entwicklung sorge ich dafür, dass Ihr Produkt auf
+                        dem aktuellesten Stand bleibt, um z.B. Sicheheitslücken
+                        vorzubeugen. Je nach Wunsch kann ich auch das Hosting
+                        übernehmen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .services {
+        position: relative;
+    }
+
+    .services>* {
+        padding: 0 var(--hPadding);
+    }
+
+    .services::before {
+        z-index: -1;
+        content: "";
+        background-color: var(--red);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 10rem;
+        position: absolute;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        overflow-x: auto;
+        overflow-y: visible;
+    }
+
+    .card {
+        position: relative;
+        overflow: visible;
+
+        flex: 0 0 auto;
+        display: inline-block;
+        width: var(--hPadding);
+        width: min(90%, 20rem);
+        margin-right: 2em;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 0.5em;
+    }
+
+    .content {
+        position: relative;
+        color: #000;
+        padding: calc(40px + 2em) 2em 2em 2em;
+        top: 0;
+    }
+
+    svg {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>

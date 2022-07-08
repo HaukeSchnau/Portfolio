@@ -1,0 +1,152 @@
+---
+import SocialMedia from "./SocialMedia.astro";
+---
+
+<header>
+    <SocialMedia />
+    <div class="darken-bg" id="darken-bg" onclick="toggleNav()"></div>
+    <nav id="nav">
+        <a href="#about" onclick="toggleNav()">Über mich</a><a href="#portfolio" onclick="toggleNav()">Portfolio</a><a
+            href="#services" onclick="toggleNav()">Dienstleistungen</a><a href="#contact"
+            onclick="toggleNav()">Kontakt</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Navigation öffnen" onclick="toggleNav()">
+        <img src="/img/hamburger.svg" alt="Menü" />
+    </button>
+</header>
+<script is:inline>
+    function toggleNav() {
+        const hamburger = document.getElementById("hamburger");
+        const bg = document.getElementById("darken-bg");
+        const nav = document.getElementById("nav");
+        hamburger.classList.toggle("active");
+        bg.classList.toggle("active");
+        nav.classList.toggle("active");
+    }
+</script>
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: var(--hPadding);
+    }
+
+    nav {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    button.hamburger {
+        background: none;
+        border: none;
+        position: relative;
+        padding: 2rem var(--hPadding);
+    }
+
+    button.hamburger:focus {
+        outline: 0;
+    }
+
+    button.hamburger::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        top: 0;
+        width: 120%;
+        height: 200%;
+        background: url("/img/top-right-corner-mobile.svg");
+        background-size: 100% 100%;
+    }
+
+    /* Desktop */
+    @media only screen and (min-width: 768px) {
+        nav {}
+
+        button.hamburger {
+            display: none;
+        }
+
+        button.hamburger::after {
+            display: none;
+            background: none;
+        }
+
+        nav {
+            display: flex;
+            padding-right: var(--hPadding);
+            padding-left: 7rem;
+            position: relative;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        nav::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 250%;
+
+            background: url("/img/top-right-corner-desktop.svg");
+            background-size: 100% 100%;
+        }
+
+        nav a {
+            color: var(--darkBlue);
+            font-weight: bold;
+            transition: 0.1s all ease;
+            padding: 0.5em 1em;
+            border-radius: 100px;
+
+        }
+
+        nav a:hover {
+            background-color: var(--red);
+            color: #fff;
+        }
+    }
+
+    /* Mobile */
+    @media only screen and (max-width: 767px) {
+        .darken-bg.active {
+            background-color: #000;
+            opacity: 0.7;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            background-color: var(--yellow);
+            right: -100%;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            z-index: 20;
+            transition: 0.5s right ease;
+        }
+
+        nav.active {
+            right: 0;
+        }
+
+        nav a {
+            padding: 1em 2em;
+            color: var(--darkBlue);
+        }
+    }
+</style>

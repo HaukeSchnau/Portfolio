@@ -1,0 +1,218 @@
+<section class="projects" id="portfolio">
+    <div class="heading">
+        <h4>Portfolio</h4>
+        <h3>Meine bisherigen Projekte</h3>
+    </div>
+    <ul>
+        <!-- <li style="--project-color: #ec1f25">
+        <div class="info">
+          <div class="title">Pizza Blitz Grasberg</div>
+          <div class="subtitle">reDesign, eCommerce</div>
+          <div class="text">
+            Was ursprünglich nur zur Verbesserung meiner Design-Skills dienen
+            sollte, wurde zu einem Online-Bestelldienst für den lokalen
+            Pizzalieferanten. Dieser bot bislang seine Speisekarte nur als
+            PDF-Dokument und Bestellungen nur telefonisch an. Mein reDesign
+            machte es den Kunden also deutlich leichter, dort einzukaufen.
+          </div>
+          <a href="https://pizzablitz.haukeschnau.de" class="cta"
+            >Website besuchen</a
+          >
+        </div>
+        <div class="img-wrapper">
+          <img src="/img/projects/pizzablitz.png" loading="lazy" />
+        </div>
+      </li> -->
+        <li style="--project-color: #3c81db">
+            <div class="info">
+                <div class="title">IGS Lilienthal Website</div>
+                <div class="subtitle">reDesign, custom CMS, Backend</div>
+                <div class="text">
+                    Auf Anfrage einer meiner Lehrer habe ich die Website meiner Schule
+                    modernisiert und neu strukturiert. Dafür habe ich auch ein eigenes
+                    Content Management System entwickelt, um in meiner Freizeit noch
+                    weitere, etwas komplexere Funktionalität hinzufügen zu können.
+                </div>
+                <a href="https://igs.haukeschnau.de" class="cta">Website besuchen</a>
+            </div>
+            <div class="img-wrapper">
+                <img src="/img/projects/igs.png" alt="Screenshot der Website der IGS Lilienthal" loading="lazy" />
+            </div>
+        </li>
+        <li style="--project-color: #611c35">
+            <div class="info">
+                <div class="title">Kreisschülerrat OHZ</div>
+                <div class="subtitle">Built from Scratch</div>
+                <div class="text">
+                    Im Zuge der Öffentlichkeitsarbeit hat sich der Kreisschülerrat des
+                    Landkreises Osterholz, in dem ich Mitglied bin, für eine eigene
+                    Website entschieden. Hier stellen wir uns vor und präsentieren
+                    unsere Projekte für die Schüler in der Region.
+                </div>
+                <!-- <a href="https://ksr.haukeschnau.de" class="cta"
+            >Website besuchen</a
+          > -->
+            </div>
+            <div class="img-wrapper">
+                <img src="/img/projects/ksr.png" alt="Screenshot der Website des KSR OHZ" loading="lazy" />
+            </div>
+        </li>
+        <li style="--project-color: #33a42b">
+            <div class="info">
+                <div class="title">IGS Lilienthal App</div>
+                <div class="subtitle">
+                    digitaler Begleiter für Schüler; unterstützt iOS & Android
+                </div>
+                <div class="text">
+                    Diese App dient als mobiler Client für iServ mit einigen
+                    zusätzlichen Funktionen. Beispielsweise erhält man eine
+                    personalisierte Übersicht über Vertretungsplan, Klausuren und
+                    Hausaufgaben.
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=de.haukeschnau.igs_lilienthal" class="cta">App
+                    herunterladen</a>
+            </div>
+            <div class="img-wrapper">
+                <img src="/img/projects/igs-app.png" alt="Screenshots der Android- und iOS-App der IGS-Lilienthal"
+                    loading="lazy" />
+            </div>
+        </li>
+    </ul>
+</section>
+<style>
+    .heading {
+        padding: 0 var(--hPadding);
+    }
+
+    li {
+        list-style-type: none;
+        --project-color: red;
+    }
+
+    .info {
+        padding: 2rem var(--hPadding);
+        padding-bottom: 6rem;
+        margin-bottom: -5rem;
+        background: var(--lightBlue);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-weight: bold;
+        color: var(--yellow);
+        font-size: clamp(1rem, 5vw, 1.8rem);
+    }
+
+    .subtitle {
+        color: var(--yellow);
+        font-style: italic;
+        opacity: 0.85;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+
+    .text {
+        padding: 1.5rem 0;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    a.cta {
+        color: var(--yellow);
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    a.cta::after {
+        content: "▶";
+        margin-left: 1ch;
+    }
+
+    .img-wrapper {
+        position: relative;
+    }
+
+    .img-wrapper img {
+        border-radius: 30px 0 0 30px;
+    }
+
+    .img-wrapper::before {
+        position: absolute;
+        content: "";
+        bottom: -1.5rem;
+        z-index: -1;
+        right: 0;
+        width: 80%;
+        height: 3rem;
+        background-color: var(--project-color);
+        border-radius: 30px 0 0 30px;
+        opacity: 0.15;
+    }
+
+    li:nth-child(2n) .img-wrapper img {
+        border-radius: 0 30px 30px 0;
+    }
+
+    li:nth-child(2n) .img-wrapper::before {
+        right: initial;
+        left: 0;
+        border-radius: 0 30px 30px 0;
+    }
+
+    /* Desktop */
+    @media only screen and (min-width: 768px) {
+        li {
+            display: flex;
+            padding-left: var(--hPadding);
+            gap: 5rem;
+            margin-bottom: 10rem;
+        }
+
+        .info {
+            background: none;
+            padding: 0;
+        }
+
+        .img-wrapper {
+            flex: 0 0 50%;
+            /* margin-right: var(--hPadding); */
+        }
+
+        .img-wrapper img {
+            width: 100%;
+        }
+
+        .img-wrapper::before {
+            width: 140%;
+            height: 6rem;
+            bottom: -3rem;
+        }
+
+        li:nth-child(2n) {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            padding-right: var(--hPadding);
+            padding-left: 0;
+        }
+    }
+
+    /* Mobile */
+    @media only screen and (max-width: 767px) {
+        .img-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5rem;
+
+        }
+
+        .img-wrapper img {
+            height: 10rem;
+        }
+
+        li:nth-child(2n) {
+            .img-wrapper {
+                justify-content: flex-start;
+            }
+        }
+    }
+</style>

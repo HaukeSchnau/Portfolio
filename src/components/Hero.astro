@@ -1,0 +1,145 @@
+---
+import Header from "./Header.astro";
+---
+
+<div class="hero">
+    <div class="bg">
+        <img src="img/bg.jpg" alt="Hintergrund" />
+    </div>
+    <img class="hauke" src="/img/hauke.png" alt="Hauke Schnau Portrait" />
+    <Header />
+    <div class="content">
+        <div class="subtitle">Hi, ich bin</div>
+        <h1>Hauke<br />Schnau.</h1>
+        <ul class="features">
+            <li>Full-Stack-Entwickler.</li>
+            <li>Web Designer.</li>
+            <li>Nerd.</li>
+        </ul>
+        <a class="cta" href="#about">
+            <div class="arrow">👇</div>
+            mehr über mich & meine Arbeit
+        </a>
+    </div>
+</div>
+
+<style>
+    .hero {
+        height: 80vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15vh;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .hero {
+            background: url("/img/side-element.svg");
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: 30rem 100%;
+        }
+    }
+
+    .bg {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .bg::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--lightBlue);
+        opacity: 0.85;
+    }
+
+    .bg img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: blur(2px);
+        transform: scale(1.1);
+    }
+
+    img.hauke {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 60%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        img.hauke {
+            right: calc(30rem * (278 / 489));
+            height: 70%;
+        }
+    }
+
+    .content {
+        padding: 2rem var(--hPadding);
+        padding-right: 0;
+        width: 60%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subtitle {
+        margin-bottom: 0.5rem;
+        font-family: "Courier New", Courier, monospace;
+        font-size: clamp(1rem, 1vw, 1.2rem);
+    }
+
+    h1 {
+        position: relative;
+        line-height: 1.2em;
+        width: fit-content;
+        margin-bottom: 3rem;
+        font-size: clamp(3rem, 10vw, 5rem);
+    }
+
+    h1::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        width: 100%;
+        bottom: -0.15em;
+        height: 0.15em;
+        background-color: var(--yellow);
+        border-radius: 9999px;
+    }
+
+    .features {
+        list-style-type: none;
+        flex-grow: 1;
+        font-size: clamp(1.12rem, 1.2vw, 1.5rem);
+    }
+
+    a.cta {
+        font-weight: bold;
+        color: var(--yellow);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        width: 80%;
+        font-size: clamp(1rem, 1vw, 1.2rem);
+    }
+
+    a.cta .arrow {
+        margin-right: 0.5em;
+    }
+
+    a.cta:hover {
+        text-decoration: underline;
+    }
+</style>

@@ -1,0 +1,138 @@
+---
+const birthday = new Date(2002, 8, 24)
+const diff = new Date(Date.now() - birthday.getTime());
+const age = diff.getFullYear() - 1970;
+---
+
+<section class="about" id="about">
+    <div class="heading">
+        <h4>Über mich</h4>
+        <h3>Wer ich bin</h3>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h2>Moin!</h2>
+            <p>
+                Ich bin Hauke, {age} Jahre alt und mache zurzeit mein Abitur an der IGS
+                Lilienthal.
+            </p>
+            <p>
+                Schon immer war ich begeistert von Computern. Seit meinem 12.
+                Lebensjahr bin ich leidenschaftlicher Coder und habe mich in diesen
+                sechs Jahren mit einer Vielzahl von Technologien befasst. Ich bin
+                davon überzeugt, dass Lernen ein lebenslanger Prozess ist und bin
+                fähig, mich in dieser sehr schnelllebigen Branche gut anzupassen.
+            </p>
+            <p>
+                In vier Betriebspraktika habe ich die Arbeit im Team kennengelernt
+                und mich neuen Herausforderungen gestellt. Heute habe ich mich auf
+                die Web- und App-Entwicklung sowohl im Frontend als auch im Backend
+                spezialisiert.
+            </p>
+
+            <p>
+                Aktuell bin ich bei
+                <a href="https://homevoice.io/"><img class="inline" loading="lazy"
+                        src="https://media-exp1.licdn.com/dms/image/C4D0BAQEER0hO9nyNLA/company-logo_200_200/0/1563807851811?e=2159024400&v=beta&t=bKQi-ndb5kbkB2TMF3p_zqBooC9jSlv6gKEW-P2hbQI" />
+                    @homevoice</a>
+                in der Front-End-Entwicklung tätig.
+            </p>
+        </div>
+        <div class="img-wrapper">
+            <img src="/img/hauke_at_work.png" alt="Ich bei der Arbeit" loading="lazy" />
+        </div>
+    </div>
+</section>
+<style>
+    .about {
+        padding-inline: var(--hPadding);
+    }
+
+    a {
+        color: var(--yellow);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    img.inline {
+        height: 1.5em;
+        vertical-align: middle;
+        border-radius: 50%;
+    }
+
+    img {
+        z-index: 1;
+        position: relative;
+    }
+
+    .img-wrapper {
+        position: absolute;
+        left: 2rem;
+        right: 2rem;
+        margin-top: 1rem;
+    }
+
+    .img-wrapper::after,
+    .img-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: calc(100% - 7px);
+    }
+
+    :root {
+        --bgShift: 10px;
+    }
+
+    .img-wrapper::after {
+        background-color: var(--red);
+        left: 0;
+        transform: translate(calc(var(--bgShift) * -1), calc(var(--bgShift) * -1));
+    }
+
+    .img-wrapper::before {
+
+        background-color: var(--yellow);
+        right: 0;
+        transform: translate(var(--bgShift), var(--bgShift));
+    }
+
+    .img-wrapper img {
+        width: 100%;
+    }
+
+    .container {
+        background-color: var(--lightBlue);
+        padding: 2rem;
+        position: relative;
+        padding-bottom: 30vw;
+        margin-bottom: 30vw;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 5vw, 1.8rem);
+        margin-bottom: 0.5rem;
+    }
+
+    /* Desktop */
+    @media only screen and (min-width: 768px) {
+        .container {
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+        }
+
+        .content {
+            width: 50%;
+        }
+
+        .img-wrapper {
+            left: initial;
+            right: -4rem;
+            bottom: -4rem;
+            width: 40%;
+        }
+    }
+</style>
