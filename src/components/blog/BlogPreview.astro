@@ -1,0 +1,39 @@
+---
+import BlogPostPreview from './BlogPostPreview.astro';
+const allPosts = await Astro.glob('../../pages/blog/*.md');
+allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+---
+
+<section id="blog">
+    <div class="heading">
+        <h4>Weise Worte</h4>
+        <h3>Mein Blog</h3>
+    </div>
+    <ul>
+        {allPosts.map((p) =>
+        <li>
+            <BlogPostPreview post={p} />
+        </li>
+        )}
+    </ul>
+</section>
+
+<style>
+    .heading {
+        padding-inline: var(--hPadding);
+    }
+
+    ul {
+        padding-inline: var(--hPadding);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    li {
+        list-style-type: none;
+        scroll-snap-align: center;
+    }
+</style>

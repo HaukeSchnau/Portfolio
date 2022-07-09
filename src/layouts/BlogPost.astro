@@ -1,0 +1,35 @@
+---
+import BaseHead from '../components/blog/BaseHead.astro';
+import BlogHeader from '../components/blog/BlogHeader.astro';
+import BlogPost from '../components/blog/BlogPost.astro';
+import "../styles/basic.css"
+
+
+const { content } = Astro.props;
+const { title, description, publishDate, author, heroImage, permalink, alt } = content;
+---
+
+<html lang={content.lang || 'en' }>
+
+<head>
+	<BaseHead {title} {description} {permalink} />
+</head>
+
+<body>
+	<BlogHeader />
+	<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
+		<slot />
+	</BlogPost>
+</body>
+
+</html>
+
+<style>
+	article :global(main > * + *) {
+		margin-top: 1rem;
+	}
+
+	article :global(h2) {
+		margin-top: 4rem;
+	}
+</style>

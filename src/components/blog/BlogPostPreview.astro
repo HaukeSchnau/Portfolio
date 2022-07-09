@@ -1,0 +1,57 @@
+---
+export interface Props {
+	post: any;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-preview">
+	<header>
+		<div class="publish-date">{post.frontmatter.publishDate}</div>
+		<a href={post.url} class="yellow">
+			<h1 class="title">{post.frontmatter.title}</h1>
+		</a>
+	</header>
+	<p>{post.frontmatter.description}</p>
+	<a href={post.url} class="read-more yellow">Mehr lesen</a>
+</article>
+
+<style>
+	.post-preview {
+		background-color: var(--lightBlue);
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	header {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: left;
+	}
+
+	.publish-date,
+	.author {
+		font-size: .8rem;
+		color: var(--theme-text-lighter);
+	}
+
+	.title {
+		font-size: 2.25rem;
+		font-weight: 700;
+		color: var(--yellow);
+	}
+
+	.read-more {
+		font-weight: bold;
+		text-transform: uppercase;
+		align-self: flex-end;
+	}
+
+	p {
+		padding-block: 1rem;
+	}
+</style>

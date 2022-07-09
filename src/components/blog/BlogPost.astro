@@ -1,0 +1,86 @@
+---
+import Author from './Author.astro';
+
+export interface Props {
+	title: string;
+	author: string;
+	publishDate: string;
+	heroImage: string;
+	alt: string;
+}
+
+const { title, author, publishDate, heroImage, alt } = Astro.props;
+---
+
+<article>
+	<header>
+		{heroImage && <img class="hero-image" src={heroImage} alt={alt} />}
+		<div class="padded">
+			<div class="publish-date">{publishDate}</div>
+			<h1 class="title">{title}</h1>
+			<Author name={author} href="https://twitter.com/FredKSchott" />
+		</div>
+	</header>
+	<main>
+		<slot />
+	</main>
+</article>
+
+<style>
+	.hero-image {
+		width: 100vw;
+		object-fit: cover;
+		object-position: center;
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+		max-width: 1280px;
+	}
+
+	@media (max-width: 50em) {
+		.hero-image {
+			height: 260px;
+			margin-top: 0;
+			margin-bottom: 2rem;
+		}
+	}
+
+	article {
+		max-width: var(--max-width);
+		margin: auto;
+	}
+
+	header {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+
+		margin-bottom: 2rem;
+		border-bottom: 4px solid var(--theme-divider);
+		position: relative;
+	}
+
+	header::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 5px;
+		opacity: 0.4;
+		background-color: var(--red);
+		border-radius: 99999px;
+	}
+
+	.padded {
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+	}
+
+	.title {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--yellow);
+	}
+</style>

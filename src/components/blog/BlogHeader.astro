@@ -1,0 +1,28 @@
+---
+import SocialMedia from "../SocialMedia.astro";
+---
+
+<header>
+	<div class="header-content">
+		<a href="/#blog" class="yellow">
+			Home
+		</a>
+		<SocialMedia />
+	</div>
+</header>
+
+<style>
+	header {
+		background-color: var(--lightBlue);
+		padding-block: 2rem;
+		display: flex;
+	}
+
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: auto;
+		width: var(--max-width);
+	}
+</style>
