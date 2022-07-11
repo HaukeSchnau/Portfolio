@@ -1,0 +1,23 @@
+---
+export interface Props {
+    href: string;
+}
+const { href } = Astro.props as Props
+---
+
+<a href={href} class="cta yellow" target="_blank" rel="noopener noreferrer">
+    <slot />
+</a>
+
+<style>
+    a.cta {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    a.cta::after {
+        content: "▶";
+        margin-left: 1ch;
+    }
+</style>
