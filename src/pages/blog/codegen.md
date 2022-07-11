@@ -6,7 +6,9 @@ author: Hauke Schnau
 description: A report of my experiments with codegen and what I learned in the process
 ---
 
-This is so cool!
+Example Markdown
+
+Test test
 
 ```javascript
 // Example JavaScript

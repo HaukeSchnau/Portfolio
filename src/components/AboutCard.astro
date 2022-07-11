@@ -1,0 +1,52 @@
+<aside>
+    <h5>About Me</h5>
+    <img src="/img/hauke2.jpg" alt="Me">
+    <p>Hey, I’m Hauke & I love designing and building Websites and Apps. I’m passionate about new frontiers in web
+        technologies and innovative ways to reliably and efficiently build robust applications while keeping high UX &
+        DX standards.</p>
+    <a href="/#about" class="yellow">Learn more</a>
+</aside>
+
+<style>
+    aside {
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem;
+        align-items: center;
+        background-color: var(--lightBlue);
+        gap: 1.2rem;
+    }
+
+    @media (max-width: 1440px) {
+        aside {
+            margin-top: 5rem;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        aside {
+            width: 300px;
+        }
+    }
+
+    h5 {
+        color: var(--yellow);
+        font-size: 1.1rem;
+        font-weight: normal;
+    }
+
+    p {
+        text-align: justify;
+        padding: 0;
+        opacity: .8;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 120px;
+    }
+
+    a {
+        align-self: flex-end;
+    }
+</style>
