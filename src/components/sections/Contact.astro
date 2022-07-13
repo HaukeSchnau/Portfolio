@@ -5,20 +5,21 @@
             <div class="sender-info">
                 <label>
                     <div class="container">Ihr Name</div>
-                    <input name="name" placeholder="Max Mustermann" />
+                    <input name="name" placeholder="Max Mustermann" required />
                 </label>
                 <label>
                     <div class="container">Ihre E-Mail-Adresse</div>
-                    <input name="email" placeholder="max.mustermann@gmail.com" />
+                    <input name="email" placeholder="max.mustermann@gmail.com" required type="email" />
                 </label>
             </div>
             <label>
-                <div class="container">Betreff</div>
-                <input name="subject" />
+                <div class=" container">Betreff
+                </div>
+                <input name="subject" required />
             </label>
             <label>
                 <div class="container">Nachricht</div>
-                <textarea name="message" rows={10}></textarea>
+                <textarea name="message" rows={10} required></textarea>
             </label>
             <button type="submit" class="btn">Absenden</button>
         </form>
