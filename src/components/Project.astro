@@ -143,10 +143,8 @@ const { title, subtitle, href, ctaText, imgUrl, imgAlt, color } = Astro.props as
             height: 10rem;
         }
 
-        li:nth-child(2n) {
-            .img-wrapper {
-                justify-content: flex-start;
-            }
+        li:nth-child(2n) .img-wrapper {
+            justify-content: flex-start;
         }
     }
 </style>
