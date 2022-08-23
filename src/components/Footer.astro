@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
     <SocialMedia />
     <div class="legal-links">
         <a href="/impressum.html">Impressum</a>
-        <!-- <a href="/datenschutz.html">Datenschutz</a> -->
+        <span>Diese Website trackt Dich nicht und kommt ohne Cookies aus</span>
     </div>
     <div class="copyright">&copy; {currentYear} Hauke Schnau</div>
 </footer>
@@ -24,6 +24,15 @@ const currentYear = new Date().getFullYear();
     .legal-links,
     .copyright {
         opacity: 0.8;
+        transition: opacity 0.2s ease;
+    }
+
+    .legal-links:hover {
+        opacity: 1;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 
     .legal-links {
