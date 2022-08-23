@@ -57,7 +57,7 @@
 
         const data = new FormData(e.target);
 
-        fetch("https://haukeschnau.de/send_message.php", {
+        fetch("/send_message.php", {
             method: "POST",
             body: data,
         })
@@ -138,11 +138,11 @@
         margin-right: 1em;
     }
 
-    a {
+    #contact a {
         color: var(--lightBlue);
     }
 
-    a:hover {
+    #contact a:hover {
         text-decoration: underline;
     }
 
