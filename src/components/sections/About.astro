@@ -50,7 +50,12 @@ const age = diff.getFullYear() - 1970;
             </p>
         </div>
         <div class="img-wrapper">
-            <img src="/img/hauke_at_work.jpg" alt="Ich bei der Arbeit" loading="lazy" />
+            <img
+                src="/img/hauke_at_work.jpg"
+                alt="Ich bei der Arbeit"
+                loading="lazy"
+                style="aspect-ratio: 1/1"
+            />
         </div>
     </div>
 </section>
@@ -93,11 +98,13 @@ const age = diff.getFullYear() - 1970;
     .img-wrapper::after {
         background-color: var(--red);
         left: 0;
-        transform: translate(calc(var(--bgShift) * -1), calc(var(--bgShift) * -1));
+        transform: translate(
+            calc(var(--bgShift) * -1),
+            calc(var(--bgShift) * -1)
+        );
     }
 
     .img-wrapper::before {
-
         background-color: var(--yellow);
         right: 0;
         transform: translate(var(--bgShift), var(--bgShift));

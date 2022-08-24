@@ -1,51 +1,62 @@
 ---
-import "../styles/basic.css"
+import "../styles/basic.css";
 ---
 
 <!DOCTYPE html>
 <html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Ich entwickle moderne Anwendungen mit Fokus auf Performance, Sicherheit und einer angenehmen User Experience."
+    />
+    <meta name="author" content="Hauke Schnau" />
+    <meta property="og:title" content="Hauke Schnau: Web- und App-Entwicklung"
+    />
+    <meta
+      property="og:description"
+      content="Ich entwickle moderne Anwendungen mit Fokus auf Performance, Sicherheit und einer angenehmen User Experience."
+    />
+    <meta name="image" content="https://haukeschnau.de/img/og.png" />
+    <meta name="og:image" content="https://haukeschnau.de/img/og.png" />
+    <title>Hauke Schnau: Web- und App-Entwicklung</title>
+    <link rel="stylesheet" href="dist/css/main.css" />
+    <link rel="icon" type="image/svg" href="/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
-  <meta name="description"
-    content="Ich entwickle moderne Anwendungen mit Fokus auf Performance, Sicherheit und einer angenehmen User Experience." />
-  <meta name="author" content="Hauke Schnau" />
-  <meta property="og:title" content="Hauke Schnau: Web- und App-Entwicklung" />
-  <meta property="og:description"
-    content="Ich entwickle moderne Anwendungen mit Fokus auf Performance, Sicherheit und einer angenehmen User Experience." />
-  <meta name="image" content="https://haukeschnau.de/img/og.png" />
-  <meta name="og:image" content="https://haukeschnau.de/img/og.png" />
-  <title>Hauke Schnau: Web- und App-Entwicklung</title>
-  <link rel="stylesheet" href="dist/css/main.css" />
-  <link rel="icon" type="image/svg" href="/img/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap"
-    rel="stylesheet" />
-</head>
+  <body>
+    <slot />
+    <style is:global>
+      img {
+        object-fit: cover;
+      }
 
-<body>
-  <slot />
-</body>
+      section {
+        padding-block: 5rem;
+        position: relative;
+      }
 
+      section:not(:last-of-type)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--hPadding);
+        right: var(--hPadding);
+        height: 1px;
+        opacity: 0.4;
+        background-color: var(--red);
+        border-radius: 99999px;
+      }
+    </style>
+  </body>
 </html>
-
-<style is:global>
-  section {
-    padding-block: 5rem;
-    position: relative;
-  }
-
-  section:not(:last-of-type)::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: var(--hPadding);
-    right: var(--hPadding);
-    height: 1px;
-    opacity: 0.4;
-    background-color: var(--red);
-    border-radius: 99999px;
-  }
-</style>
