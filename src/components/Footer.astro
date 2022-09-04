@@ -4,48 +4,49 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-    <SocialMedia />
-    <div class="legal-links">
-        <a href="/impressum">Impressum</a>
-        <span>Diese Website trackt Dich nicht und kommt ohne Cookies aus</span>
-    </div>
-    <div class="copyright">&copy; {currentYear} Hauke Schnau</div>
+  <SocialMedia />
+  <div class="legal-links">
+    <a href="/impressum">Impressum</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <span>Diese Website trackt Dich nicht und kommt ohne Cookies aus</span>
+  </div>
+  <div class="copyright">&copy; {currentYear} Hauke Schnau</div>
 </footer>
 <style>
-    footer {
-        background-color: var(--lightBlue);
-        padding: 5rem var(--hPadding);
-        display: grid;
-        grid-template-columns: auto auto;
-        row-gap: 2rem;
-        font-size: 0.9rem;
-    }
+  footer {
+    background-color: var(--lightBlue);
+    padding: 5rem var(--hPadding);
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 2rem;
+    font-size: 0.9rem;
+  }
 
-    .legal-links,
-    .copyright {
-        opacity: 0.8;
-        transition: opacity 0.2s ease;
-    }
+  .legal-links,
+  .copyright {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
 
-    .legal-links:hover {
-        opacity: 1;
-    }
+  .legal-links:hover {
+    opacity: 1;
+  }
 
-    a:hover {
-        text-decoration: underline;
-    }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    .legal-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        grid-column: 1 / 2;
-    }
+  .legal-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    grid-column: 1 / 2;
+  }
 
-    .copyright {
-        display: flex;
-        align-items: flex-end;
-        text-align: right;
-        justify-content: flex-end;
-    }
+  .copyright {
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    justify-content: flex-end;
+  }
 </style>
