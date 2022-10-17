@@ -1,178 +1,178 @@
 <section class="contact" id="contact">
-    <h3>Neugierig geworden?</h3>
-    <div class="content">
-        <form id="contact-form" target="/">
-            <div class="sender-info">
-                <label>
-                    <div class="container">Ihr Name</div>
-                    <input name="name" placeholder="Max Mustermann" required />
-                </label>
-                <label>
-                    <div class="container">Ihre E-Mail-Adresse</div>
-                    <input
-                        name="email"
-                        placeholder="max.mustermann@gmail.com"
-                        required
-                        type="email"
-                    />
-                </label>
-            </div>
-            <label>
-                <div class="container">Betreff</div>
-                <input name="subject" required />
-            </label>
-            <label>
-                <div class="container">Nachricht</div>
-                <textarea name="message" rows={10} required></textarea>
-            </label>
-            <button type="submit" class="btn">Absenden</button>
-        </form>
-        <div class="more-contact">
-            <div class="heading">Weitere Kontaktmöglichkeiten:</div>
-            <ul>
-                <li>
-                    <img src="/img/home.svg" alt="Adresse" />
-                    <a
-                        href="https://www.google.com/maps/place/Worphauser+Landstra%C3%9Fe+3,+28865+Lilienthal"
-                        >Worphauser Landstraße 3<br />28865 Lilienthal
-                    </a>
-                </li>
-                <li>
-                    <img src="/img/email.svg" alt="E-Mail" />
-                    <a href="mailto:hej@haukeschnau.de">hej@haukeschnau.de</a>
-                </li>
-                <li>
-                    <img src="/img/phone.svg" alt="Telefon" />
-                    <a href="tel:0172 8284708">0172 8284708</a>
-                </li>
-            </ul>
-        </div>
+  <h3>Neugierig geworden?</h3>
+  <div class="content">
+    <form id="contact-form" target="/">
+      <div class="sender-info">
+        <label>
+          <div class="container">Ihr Name</div>
+          <input name="name" placeholder="Max Mustermann" required />
+        </label>
+        <label>
+          <div class="container">Ihre E-Mail-Adresse</div>
+          <input
+            name="email"
+            placeholder="max.mustermann@gmail.com"
+            required
+            type="email"
+          />
+        </label>
+      </div>
+      <label>
+        <div class="container">Betreff</div>
+        <input name="subject" required />
+      </label>
+      <label>
+        <div class="container">Nachricht</div>
+        <textarea name="message" rows={10} required></textarea>
+      </label>
+      <button type="submit" class="btn">Absenden</button>
+    </form>
+    <div class="more-contact">
+      <div class="heading">Weitere Kontaktmöglichkeiten:</div>
+      <ul>
+        <li>
+          <img src="/img/home.svg" alt="Adresse" />
+          <a
+            href="https://www.google.com/maps/place/Stellinger+Ch+19,+22529+Hamburg"
+            >Stellinger Chaussee 19<br />22529 Hamburg
+          </a>
+        </li>
+        <li>
+          <img src="/img/email.svg" alt="E-Mail" />
+          <a href="mailto:hej@haukeschnau.de">hej@haukeschnau.de</a>
+        </li>
+        <li>
+          <img src="/img/phone.svg" alt="Telefon" />
+          <a href="tel:0172 8284708">0172 8284708</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </section>
 
 <script is:inline>
-    const form = document.getElementById("contact-form");
-    form.onsubmit = (e) => {
-        e.preventDefault();
+  const form = document.getElementById("contact-form");
+  form.onsubmit = (e) => {
+    e.preventDefault();
 
-        const data = new FormData(e.target);
+    const data = new FormData(e.target);
 
-        fetch("/send_message.php", {
-            method: "POST",
-            body: data,
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                if (res.success) {
-                    const modal = document.getElementById("modal");
-                    modal.classList.add("active");
-                    form.reset();
-                }
-            });
-    };
+    fetch("/send_message.php", {
+      method: "POST",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success) {
+          const modal = document.getElementById("modal");
+          modal.classList.add("active");
+          form.reset();
+        }
+      });
+  };
 </script>
 
 <style>
-    .contact {
-        padding-inline: var(--hPadding);
+  .contact {
+    padding-inline: var(--hPadding);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    background-color: var(--lightBlue);
+    border-radius: 10px 10px 0 0;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+  }
+
+  input,
+  textarea {
+    font-family: inherit;
+    background-color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .more-contact {
+    background-color: #fff;
+    border-radius: 1rem;
+    color: var(--lightBlue);
+    padding: 1.2rem;
+  }
+
+  .heading {
+    font-weight: bold;
+  }
+
+  li {
+    padding: 1rem 0;
+    list-style-type: none;
+    display: flex;
+  }
+
+  .more-contact img {
+    width: 1.5rem;
+    margin-right: 1em;
+    object-fit: fill;
+  }
+
+  #contact a {
+    color: var(--lightBlue);
+  }
+
+  #contact a:hover {
+    text-decoration: underline;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .sender-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .sender-info > * {
+      flex-grow: 1;
     }
 
     .content {
-        display: flex;
-        flex-direction: column;
-        gap: 5rem;
+      flex-direction: row;
     }
 
     form {
-        display: flex;
-        flex-direction: column;
+      flex-grow: 1;
     }
 
-    label {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .container {
-        background-color: var(--lightBlue);
-        border-radius: 10px 10px 0 0;
-        margin-left: 1rem;
-        padding: 0.5rem 1rem;
-        width: fit-content;
-    }
-
-    input,
-    textarea {
-        font-family: inherit;
-        background-color: #fff;
-        border: 0;
-        outline: 0;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 2rem;
-    }
-
-    textarea {
-        resize: vertical;
+    button {
+      width: 15rem;
+      align-self: flex-end;
     }
 
     .more-contact {
-        background-color: #fff;
-        border-radius: 1rem;
-        color: var(--lightBlue);
-        padding: 1.2rem;
+      padding: 2rem;
     }
-
-    .heading {
-        font-weight: bold;
-    }
-
-    li {
-        padding: 1rem 0;
-        list-style-type: none;
-        display: flex;
-    }
-
-    .more-contact img {
-        width: 1.5rem;
-        margin-right: 1em;
-        object-fit: fill;
-    }
-
-    #contact a {
-        color: var(--lightBlue);
-    }
-
-    #contact a:hover {
-        text-decoration: underline;
-    }
-
-    @media only screen and (min-width: 768px) {
-        .sender-info {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .sender-info > * {
-            flex-grow: 1;
-        }
-
-        .content {
-            flex-direction: row;
-        }
-
-        form {
-            flex-grow: 1;
-        }
-
-        button {
-            width: 15rem;
-            align-self: flex-end;
-        }
-
-        .more-contact {
-            padding: 2rem;
-        }
-    }
+  }
 </style>
